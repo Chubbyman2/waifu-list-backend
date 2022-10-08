@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Waifu(models.Model):
     name = models.CharField(max_length=50)
     anime = models.CharField(max_length=100)
-    rank = models.IntegerField(default=0)
+    rank = models.IntegerField(default=0, unique=True)
     description = models.TextField()
     image = models.CharField(max_length=30)
     created_at = models.DateTimeField(auto_now_add=True)
