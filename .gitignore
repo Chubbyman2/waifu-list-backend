@@ -4,6 +4,6 @@ waifu_list/waifu_list/__pycache__
 test.py
 
 # Elastic Beanstalk Files
-waifu_list/elasticbeanstalk/*
-waifu_list/elasticbeanstalk/*.cfg.yml
-waifu_list/elasticbeanstalk/*.global.yml
+waifu_list/.elasticbeanstalk/*
+waifu_list/.elasticbeanstalk/*.cfg.yml
+waifu_list/.elasticbeanstalk/*.global.yml
