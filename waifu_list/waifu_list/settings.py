@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=3@5sq%w++ml%^18qb60x%h^w+jkn*7z1-hieg^xdo3f3+0qx#"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # https://stackoverflow.com/questions/65631206/mime-type-error-from-aws-elastic-beanstalk
@@ -77,7 +78,6 @@ WSGI_APPLICATION = "waifu_list.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-load_dotenv()
 PASSWORD = os.getenv("SUPABASE_PASSWORD")
 HOST = os.getenv("SUPABASE_HOST")
 DATABASES = {
