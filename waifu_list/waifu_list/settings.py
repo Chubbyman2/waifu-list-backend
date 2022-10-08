@@ -23,9 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-=3@5sq%w++ml%^18qb60x%h^w+jkn*7z1-hieg^xdo3f3+0qx#"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# https://stackoverflow.com/questions/65631206/mime-type-error-from-aws-elastic-beanstalk
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1",
+                 "waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
 
 
 # Application definition
@@ -116,6 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
