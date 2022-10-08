@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
+from dotenv import load_dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,14 +77,16 @@ WSGI_APPLICATION = "waifu_list.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+load_dotenv()
+PASSWORD = os.getenv("SUPABASE_PASSWORD")
+HOST = os.getenv("SUPABASE_HOST")
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "postgres",
         "USER": "postgres",
-        "PASSWORD": "fastandfurioushobbsandshaw",
-        "HOST": "db.zyvpazdggwmxpcyktcxj.supabase.co",
+        "PASSWORD": PASSWORD,
+        "HOST": HOST,
         "PORT": "5432",
     }
 }
