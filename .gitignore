@@ -1,6 +1,8 @@
 waifu_list/api/__pycache__
 waifu_list/api/migrations/__pycache__
 waifu_list/waifu_list/__pycache__
+waifu_list/waifu_list/.env
+waifu_list/.ebextensions
 test.py
 
 # Elastic Beanstalk Files
