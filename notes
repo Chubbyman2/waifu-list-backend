@@ -1,0 +1,16 @@
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+https://stackoverflow.com/questions/65631206/mime-type-error-from-aws-elastic-beanstalk
+
+To deploy static files:
+1. Go to settings.py
+2. Set DEBUG=False (comes as True by default)
+3. Add STATIC_ROOT='static'
+4. Add the following to the .config file:
+container_commands:
+  collectstatic:
+    command: "source /var/app/venv/*/bin/activate && python3 manage.py collectstatic --noinput"
+option_settings:
+  aws:elasticbeanstalk:environment:proxy:staticfiles:
+    /static: static
+
+This will collect all your static files in one location and deploy it.
