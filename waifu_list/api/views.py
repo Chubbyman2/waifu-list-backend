@@ -1,5 +1,4 @@
 import json
-from re import T
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -146,8 +145,31 @@ class WaifuApiView(APIView):
             return Response({'message': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
-class WaifuApiAll(generics.ListAPIView):
-    queryset = Waifu.objects.all()
-    serializer_class = WaifuSerializer
+class WaifuApiAll(APIView):
+    '''
+    This is for operations that affect all waifu entries in the database.
+    '''
+    # Add permission to check if user is authenticated
+    # permission_classes = [permissions.IsAuthenticated]
 
+    def get(self, request, *args, **kwargs):
+        '''
+        Get all waifu entries from the database.
+        '''
+        try:
+            waifus = Waifu.objects.all()
+            serializer = WaifuSerializer(waifus, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'message': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    
 
+    def delete(self, request, *args, **kwargs):
+        '''
+        Delete all waifu entries from the database.
+        '''
+        try:
+            Waifu.objects.all().delete()
+            return Response({'message': 'All waifus successfully deleted.'}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'message': str(e)}, status=status.HTTP_400_BAD_REQUEST)
