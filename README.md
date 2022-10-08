@@ -1,5 +1,11 @@
 # waifu-list-backend
-This is essentially an upgrade of my <a href="https://github.com/Chubbyman2/waifu-list-api">previous waifu list REST API</a>. There are numerous differences in this project, which will be highlighted in the **Built With** section. 
+This is essentially an upgrade of my <a href="https://github.com/Chubbyman2/waifu-list-api">previous waifu list REST API</a>. There are numerous differences in this project, which will be highlighted in the **Built With** section. That being said, may I present the new and improved <a href="http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/">Waifu List REST API</a>!
+
+## Getting Started
+To get started locally, clone the repo and install the necessary dependencies. Then:
+1. Go to settings.py, set DEBUG=False for local deployment
+2. cd waifu_list
+3. python manage.py runserver
 
 
 ### Prerequisites
