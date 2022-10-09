@@ -32,11 +32,8 @@ ALLOWED_HOSTS = ["127.0.0.1",
                  "waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
 
 # CORS stuff
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = ["http://127.0.0.1",
-                        "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
-CORS_ALLOWED_ORIGIN_REGEXES = ["http://127.0.0.1",
-                               "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
 
 # Application definition
 INSTALLED_APPS = [
