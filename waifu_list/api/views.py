@@ -23,7 +23,7 @@ class WaifuApiView(APIView):
         '''
         Get a single waifu entry from the database.
         '''
-        payload = json.loads(request.body)
+        payload = request.GET # Gets params cuz GET doesn't allow a body
         
         if not payload:
             return Response({'message': 'No data provided!'}, status=status.HTTP_400_BAD_REQUEST)
@@ -57,16 +57,18 @@ class WaifuApiView(APIView):
             missingFields.append("anime")
         if "rank" not in payload:
             missingFields.append("rank")
-        if "description" not in payload:
-            missingFields.append("description")
         if "image" not in payload:
             missingFields.append("image")
         else:
             name = payload.get("name")
             anime = payload.get("anime")
             rank = payload.get("rank")
-            description = payload.get("description")
             image = payload.get("image")
+        
+        if "description" in payload:
+            description = payload.get("description")
+        else:
+            description = None
         
         if len(missingFields) > 0:
             return Response({'message': 'Missing fields: ' + str(missingFields)}, status=status.HTTP_400_BAD_REQUEST)
