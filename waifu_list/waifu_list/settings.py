@@ -31,9 +31,14 @@ DEBUG = False
 ALLOWED_HOSTS = ["127.0.0.1",
                  "waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
 
+# CORS stuff
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = ["http://127.0.0.1",
+                        "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
+CORS_ALLOWED_ORIGIN_REGEXES = ["http://127.0.0.1",
+                               "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -43,6 +48,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "api",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +59,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = "waifu_list.urls"
