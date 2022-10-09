@@ -27,10 +27,9 @@ Given a waifu ID or name, return the waifu entry.
 ```py
 BASE = "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/"
 query = {
-    "name": "Makise Kurisu",
-    "anime": "Steins;Gate",
+    "name": "Lynn Wiles"
 }
-response = requests.get(BASE + "api", json=query)
+response = requests.get(BASE + "api", params=query)
 print(response.json())
 # {'id': 1, 'name': 'Lynn Wiles', 'anime': 'Pulse', 'rank': 1, 'description': 'My ideal girl', 'image': 'lynn_wiles.png', 'created_at': '2022-10-08T17:31:32.100908Z', 'updated_at': '2022-10-08T17:31:32.100908Z'}
 ```
