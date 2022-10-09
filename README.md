@@ -104,21 +104,21 @@ print(response.json())
 ```
 
 ## Built With
-### Django
+### Django (Django REST Framework)
 I switched from using Flask to Django as I got the hang of REST APIs and back end development. I was absolutely blown away with how beautifully Django handles database integrations, caching, and authentication. Django, along with its beautiful integration with Supabase, form the foundation of the back end. Tables that would usually be stored in a local SQLite database are now directly integrated with Supabase, which includes Django's authentication, saved models, permissions, logs, etc.
 
 ### Supabase (PostgreSQL)
 I upgraded from a locally-hosted SQLite database to using a cloud-based PostgreSQL database provider, known as Supabase. I learned how to use Supabase during my summer internship at Content Turbine, and decided to use it as they allow for easy integration of migrations from Django.
 
 ### AWS Elastic Beanstalk
-Previously, I used Heroku to host all my projects, including my previous REST API. However, due to Salesforce removing all free-tier plans, it was time for an upgrade. 
+Previously, I used Heroku to host all my projects, including my previous REST API. However, due to Salesforce removing all free-tier plans, it was time for an upgrade. Assuming you set up everything correctly, AWS EB allows for easy deployment via <a href="https://github.com/aws/aws-elastic-beanstalk-cli-setup">their CLI</a>.  
 
 ## To Do
 ### Authentication
 Once the front end is up and running, and an authentication page is available, I will add a check for authorized users in the endpoints. Supabase and Django make this super easy.
 
 ### Caching w/ Redis
-Django also has Redis integration, which I will look into in the future. This will help in case I get famous one day and lots of people check out my waifu list xD
+Django also has Redis integration, which I will look into in the future. This will help in case I get famous one day and lots of people check out my waifu list.
 
 ## License
-This project is licensed under the MIT License - see the <a href="https://github.com/Chubbyman2/waifu-database/blob/main/LICENSE">LICENSE</a> file for details.
+This project is licensed under the MIT License - see the <a href="https://github.com/Chubbyman2/waifu-list-backend/blob/main/LICENSE">LICENSE</a> file for details.
