@@ -7,7 +7,7 @@ class Waifu(models.Model):
     name = models.CharField(max_length=50)
     anime = models.CharField(max_length=100)
     rank = models.IntegerField(default=0, unique=True)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     image = models.CharField(max_length=30)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
