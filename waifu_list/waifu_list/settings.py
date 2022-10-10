@@ -29,7 +29,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1",
-                 "waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com"]
+                 "waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com",
+                 "charles-waifu-list.azurewebsites.net"]
 
 # CORS stuff
 CORS_ORIGIN_ALLOW_ALL = True
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "api",
     'corsheaders',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +61,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "waifu_list.urls"
@@ -127,7 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = "static"
+# STATIC_ROOT = "static"
+
+# Azure Settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = BASE_DIR / "api/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
