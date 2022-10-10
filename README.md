@@ -1,5 +1,5 @@
 # waifu-list-backend
-This is essentially an upgrade of my <a href="https://github.com/Chubbyman2/waifu-list-api">previous waifu list REST API</a>. There are numerous differences in this project, which will be highlighted in the **Built With** section. That being said, may I present the new and improved <a href="http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/">Waifu List REST API</a>!
+This is essentially an upgrade of my <a href="https://github.com/Chubbyman2/waifu-list-api">previous waifu list REST API</a>. There are numerous differences in this project, which will be highlighted in the **Built With** section. That being said, may I present the new and improved <a href="https://charles-waifu-list.azurewebsites.net/">Waifu List REST API</a>!
 
 ## Getting Started
 To get started locally, clone the repo and install the necessary dependencies. Then:
@@ -22,10 +22,10 @@ supabase==0.6.0
 
 ### GET
 Given a waifu ID or name, return the waifu entry.
-- Endpoint: http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/api
+- Endpoint: https://charles-waifu-list.azurewebsites.net/api
 - "id" and/or "name" required
 ```py
-BASE = "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/"
+BASE = "https://charles-waifu-list.azurewebsites.net/"
 query = {
     "name": "Lynn Wiles"
 }
@@ -36,10 +36,10 @@ print(response.json())
 
 ### POST
 Given all necessary fields, create a new waifu entry.
-- Endpoint: http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/api
+- Endpoint: https://charles-waifu-list.azurewebsites.net/api
 - "name", "anime", "rank", "description", "image" required
 ```py
-BASE = "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/"
+BASE = "https://charles-waifu-list.azurewebsites.net/"
 query = {
     "name": "Makise Kurisu",
     "anime": "Steins;Gate",
@@ -54,10 +54,10 @@ print(response.json())
 
 ### PUT
 Given a waifu ID or name, along with the fields to be changed, update the waifu entry.
-- Endpoint: http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/api
+- Endpoint: https://charles-waifu-list.azurewebsites.net/api
 - "id" and/or "name" required
 ```py
-BASE = "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/"
+BASE = "https://charles-waifu-list.azurewebsites.net/"
 query = {
     "name": "Makise Kurisu",
     "description": "Zombie girl"
@@ -69,10 +69,10 @@ print(response.json())
 
 ### DELETE
 Given a waifu ID or name, delete the waifu entry.
-- Endpoint: http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/api
+- Endpoint: https://charles-waifu-list.azurewebsites.net/api
 - "id" and/or "name" required
 ```py
-BASE = "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/"
+BASE = "https://charles-waifu-list.azurewebsites.net/"
 query = {
     "name": "Makise Kurisu",
     "description": "Zombie girl"
@@ -84,9 +84,9 @@ print(response.json())
 
 ### GET ALL
 Returns all waifus in the database. No fields required.
-- Endpoint: http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/api/all
+- Endpoint: https://charles-waifu-list.azurewebsites.net/api/all
 ```py
-BASE = "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/"
+BASE = "https://charles-waifu-list.azurewebsites.net/"
 response = requests.get(BASE + "api/all", json=query)
 print(response.json())
 # [{'id': 1, 'name': 'Lynn Wiles', 'anime': 'Pulse', 'rank': 1, 'description': 'My ideal girl', 'image': 'lynn_wiles.png', 'created_at': '2022-10-08T17:31:32.100908Z', 'updated_at': '2022-10-08T17:31:32.100908Z'}, {'id': 2, 'name': 'Makise Kurisu', 'anime': 'Steins;Gate', 'rank': 2, 'description': 'Zombie girl', 'image': 'makise_kurisu.png', 'created_at': '2022-10-08T20:30:22.072971Z', 'updated_at': '2022-10-08T20:30:22.072971Z'}]
@@ -94,9 +94,9 @@ print(response.json())
 
 ### DELETE ALL
 Deletes all waifus in the database. No fields required.
-- Endpoint: http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/api/all
+- Endpoint: https://charles-waifu-list.azurewebsites.net/api/all
 ```py
-BASE = "http://waifu-list.eba-wprwgyza.us-east-1.elasticbeanstalk.com/"
+BASE = "https://charles-waifu-list.azurewebsites.net/"
 response = requests.delete(BASE + "api/all", json=query)
 print(response.json())
 # {'message': 'All waifus successfully deleted.'}

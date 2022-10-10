@@ -1,3 +1,11 @@
+### Microsoft Azure deployment
+https://learn.microsoft.com/en-us/azure/app-service/configure-language-python#container-startup-process?appservice=startup
+https://www.youtube.com/watch?v=D6Wyk9q2JM0
+
+### Firebase
+https://medium.com/swlh/how-to-deploy-a-react-app-with-firebase-hosting-98063c5bf425
+
+### For previous AWS deployment
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
 https://stackoverflow.com/questions/65631206/mime-type-error-from-aws-elastic-beanstalk
 
