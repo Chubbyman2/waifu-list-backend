@@ -109,8 +109,8 @@ I switched from using Flask to Django as I got the hang of REST APIs and back en
 ### Supabase (PostgreSQL)
 I upgraded from a locally-hosted SQLite database to using a cloud-based PostgreSQL database provider, known as Supabase. I learned how to use Supabase during my summer internship at Content Turbine, and decided to use it as they allow for easy integration of migrations from Django.
 
-### AWS Elastic Beanstalk
-Previously, I used Heroku to host all my projects, including my previous REST API. However, due to Salesforce removing all free-tier plans, it was time for an upgrade. Assuming you set up everything correctly, AWS EB allows for easy deployment via <a href="https://github.com/aws/aws-elastic-beanstalk-cli-setup">their CLI</a>.  
+### Microsoft Azure
+Previously, I used Heroku to host all my projects, including my previous REST API. Then I switched to using AWS Elastic Beanstalk, until I realized that it doesn't provide the back end domain name with SSL certification. This was a problem, as all front end hosting services now require requests to be HTTPS, not HTTP. Finally, I switched to <a href="https://learn.microsoft.com/en-us/azure/app-service/configure-language-python#container-startup-process?appservice=startup">deploying on Microsoft Azure</a>.
 
 ## To Do
 ### Authentication
